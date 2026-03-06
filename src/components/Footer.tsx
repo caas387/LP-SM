@@ -5,7 +5,7 @@ export const Footer = () => {
   const WHATSAPP_URL = "https://wa.me/5511958247301";
 
   return (
-    <footer className="bg-black text-white pt-32 pb-12 px-8 overflow-hidden">
+    <footer id="contato" className="bg-black text-white pt-32 pb-12 px-4 md:px-8 overflow-hidden">
       <div className="max-w-[1440px] mx-auto">
         
         {/* LOGO SUPERIOR */}
@@ -17,13 +17,13 @@ export const Footer = () => {
         </div>
 
         {/* GRID PRINCIPAL */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-16 mb-24">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-12 md:gap-16 mb-24">
           
           {/* COLUNA 1: IDENTIDADE */}
           <div className="lg:col-span-1">
             <h5 className="text-[10px] uppercase tracking-[0.3em] text-white/30 font-bold mb-8">Identidade</h5>
-            <p className="text-sm font-medium mb-4 italic">"Estratégias que Definem o Futuro."</p>
-            <p className="text-xs text-white/40 leading-relaxed">
+            <p className="text-[10px] font-medium mb-4 italic">"Estratégias que Definem o Futuro."</p>
+            <p className="text-[11px] text-white/40 leading-relaxed">
               Agência focada em soluções digitais 360°, unindo design de elite e performance real para dominar o mercado.
             </p>
           </div>
@@ -31,23 +31,23 @@ export const Footer = () => {
           {/* COLUNA 2: CONTATO */}
           <div>
             <h5 className="text-[10px] uppercase tracking-[0.3em] text-white/30 font-bold mb-8">Contato</h5>
-            <div className="flex flex-col gap-6 text-sm">
+            <div className="flex flex-col gap-4 text-[11px] md:text-sm">
               <div>
                 <span className="block text-[9px] text-white/20 uppercase mb-1">E-mail</span>
-                <a href="mailto:contato@smcompany.com" className="hover:text-white/60 transition-colors">contato@smcompany.com</a>
+                <a href="mailto:contato@smcompany.com" className="hover:text-white/60 transition-colors text-[11px] md:text-sm">contato@smcompany.com</a>
               </div>
               <div>
                 <span className="block text-[9px] text-white/20 uppercase mb-1">WhatsApp</span>
-                <a href={WHATSAPP_URL} target="_blank" rel="noreferrer" className="hover:text-white/60 transition-colors">+55 (11) 95824-7301</a>
+                <a href={WHATSAPP_URL} target="_blank" rel="noreferrer" className="hover:text-white/60 transition-colors text-[11px] md:text-sm">+55 (11) 95824-7301</a>
               </div>
-              <p className="text-xs text-white/40 uppercase tracking-widest">Atendimento: Digital & Global</p>
+              <p className="text-[9px] md:text-xs text-white/40 uppercase tracking-widest">Atendimento: Digital & Global</p>
             </div>
           </div>
 
           {/* COLUNA 3: LINKS RÁPIDOS */}
           <div>
             <h5 className="text-[10px] uppercase tracking-[0.3em] text-white/30 font-bold mb-8">Links Rápidos</h5>
-            <ul className="flex flex-col gap-4 text-sm text-white/40 uppercase tracking-widest font-medium">
+            <ul className="flex flex-col gap-4 text-xs md:text-sm text-white/40 uppercase tracking-widest font-medium">
               <li><a href="#" className="hover:text-white transition-colors">Início</a></li>
               <li><a href="#" className="hover:text-white transition-colors">Sobre Nós</a></li>
               <li><a href="#" className="hover:text-white transition-colors">Nossos Serviços</a></li>
