@@ -11,7 +11,7 @@ export const Navbar = () => {
 
   const menuItems = [
     { name: 'Início', href: '#inicio' },
-    { name: 'Possibilidades', href: '#possibilidades' },
+    //{ name: 'Possibilidades', href: '#possibilidades' },
     { name: 'Sobre', href: '#sobre' },
     { name: 'Contato', href: '#contato' },
   ];

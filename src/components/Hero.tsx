@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { useMagneticHover } from '../hooks/useMagneticHover';
 // @ts-ignore
-import samaraImg from '../assets/img/samara.webp';
+import samaraImg from '../assets/img/samara1.webp';
 
 const CONTACT_PHONE = "5511958247301";
 const WHATSAPP_URL = `https://wa.me/${CONTACT_PHONE}?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20a%20presença%20digital.`;
