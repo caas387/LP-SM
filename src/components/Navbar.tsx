@@ -1,9 +1,13 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Hexagon } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
+import { useMagneticHover } from '../hooks/useMagneticHover';
+// @ts-ignore
+import logoImg from '../assets/img/logo-sm.webp';
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const btnOrcamentoRef = useMagneticHover();
 
   const menuItems = [
     { name: 'Início', href: '#inicio' },
@@ -17,8 +21,12 @@ export const Navbar = () => {
       <div className="max-w-[1440px] mx-auto px-6 md:px-12 h-20 flex items-center justify-between">
         
         {/* LOGO */}
-        <div className="flex items-center gap-2">
-          <Hexagon className="w-6 h-6 text-black fill-black" />
+        <div className="flex items-center gap-3">
+          <img 
+            src={logoImg} 
+            alt="SM Company Logo" 
+            className="w-8 h-8 object-contain"
+          />
           <span className="font-bold tracking-tighter uppercase text-lg">SM COMPANY</span>
         </div>
 
@@ -34,8 +42,9 @@ export const Navbar = () => {
             </a>
           ))}
           <a 
+            ref={btnOrcamentoRef}
             href="https://wa.me/5511958247301" 
-            className="bg-black text-white px-6 py-3 rounded-full text-[10px] font-bold uppercase tracking-widest hover:bg-zinc-800 transition-all"
+            className="bg-black text-white px-6 py-3 rounded-full text-[10px] font-bold uppercase tracking-widest btn-magnetic btn-fill-effect btn-glow-pulse"
           >
             Orçamento
           </a>

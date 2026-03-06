@@ -66,10 +66,10 @@ const StrategicBlueprint = () => {
             transition={{ delay: 0.8 + (i * 0.3) }}
             className="flex items-center gap-4"
           >
-            <span className="text-[7px] md:text-[9px] tracking-[0.4em] text-white/20 font-mono uppercase">
+            <span className="text-[7px] md:text-[9px] tracking-[0.4em] text-yellow-400/70 font-mono uppercase">
               {service} <span className="hidden sm:inline opacity-10 text-[7px] ml-2">// PROCESSED_</span>
             </span>
-            <div className="h-[1px] w-4 md:w-8 bg-white/5" />
+            <div className="h-[1px] w-4 md:w-8 bg-yellow-500/20" />
           </motion.div>
         ))}
       </div>

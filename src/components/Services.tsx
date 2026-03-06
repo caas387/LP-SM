@@ -43,7 +43,7 @@ export const Services = () => {
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
           >
-            <span className="text-[10px] tracking-[0.4em] font-bold uppercase text-white/20 mb-4 block">
+            <span className="text-[10px] tracking-[0.4em] font-bold uppercase text-yellow-400 mb-4 block">
               O QUE ENTREGAMOS
             </span>
             <h2 className="text-4xl md:text-6xl lg:text-8xl font-medium tracking-tighter uppercase">
@@ -77,7 +77,7 @@ export const Services = () => {
                 <item.icon className="text-white/40 group-hover:text-black transition-colors" size={24} />
               </div>
 
-              <span className="text-[10px] font-bold text-white/30 tracking-[0.2em] mb-2 uppercase">
+              <span className="text-[10px] font-bold text-yellow-400/70 tracking-[0.2em] mb-2 uppercase">
                 {item.subtitle}
               </span>
               
@@ -88,7 +88,7 @@ export const Services = () => {
               {/* TAGS */}
               <div className="flex flex-wrap justify-center gap-2 mb-8">
                 {item.tags.map(tag => (
-                  <span key={tag} className="text-[8px] border border-white/10 px-3 py-1 rounded-full opacity-40 uppercase tracking-widest">
+                  <span key={tag} className="text-[8px] border border-yellow-500/30 px-3 py-1 rounded-full text-yellow-400/60 uppercase tracking-widest">
                     {tag}
                   </span>
                 ))}

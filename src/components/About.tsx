@@ -39,7 +39,7 @@ export const About = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          <span className="text-[9px] md:text-[10px] tracking-[0.5em] font-bold uppercase text-white/20 mb-4 md:mb-6 block">
+          <span className="text-[9px] md:text-[10px] tracking-[0.5em] font-bold uppercase text-yellow-400 mb-4 md:mb-6 block">
             NOSSA FILOSOFIA
           </span>
 
@@ -51,7 +51,7 @@ export const About = () => {
           
           <div className="flex flex-wrap gap-3 mb-12">
             {tags.map(tag => (
-              <span key={tag} className="text-[9px] uppercase tracking-[0.3em] border border-white/10 px-6 py-2 rounded-full text-white/40 font-semibold">
+              <span key={tag} className="text-[9px] uppercase tracking-[0.3em] border border-yellow-500/40 px-6 py-2 rounded-full text-yellow-300/80 font-semibold">
                 {tag}
               </span>
             ))}

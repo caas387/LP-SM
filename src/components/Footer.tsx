@@ -1,5 +1,7 @@
 import React from 'react';
-import { Instagram, Linkedin, MessageCircle, Globe, Hexagon } from 'lucide-react';
+import { Instagram, Linkedin, MessageCircle, Globe } from 'lucide-react';
+// @ts-ignore
+import logoImg from '../assets/img/logo-sm.webp';
 
 export const Footer = () => {
   const WHATSAPP_URL = "https://wa.me/5511958247301";
@@ -10,9 +12,11 @@ export const Footer = () => {
         
         {/* LOGO SUPERIOR */}
         <div className="flex items-center gap-3 mb-20 group cursor-default">
-          <div className="w-8 h-8 bg-white rounded-lg flex items-center justify-center transition-transform group-hover:rotate-12">
-            <Hexagon className="w-5 h-5 text-black fill-black" />
-          </div>
+          <img 
+            src={logoImg} 
+            alt="SM Company Logo" 
+            className="w-8 h-8 object-contain transition-transform group-hover:rotate-12"
+          />
           <span className="text-xl font-bold tracking-tighter uppercase">SM COMPANY</span>
         </div>
 
@@ -21,7 +25,7 @@ export const Footer = () => {
           
           {/* COLUNA 1: IDENTIDADE */}
           <div className="lg:col-span-1">
-            <h5 className="text-[10px] uppercase tracking-[0.3em] text-white/30 font-bold mb-8">Identidade</h5>
+            <h5 className="text-[10px] uppercase tracking-[0.3em] text-yellow-400 font-bold mb-8">Identidade</h5>
             <p className="text-[10px] font-medium mb-4 italic">"Estratégias que Definem o Futuro."</p>
             <p className="text-[11px] text-white/40 leading-relaxed">
               Agência focada em soluções digitais 360°, unindo design de elite e performance real para dominar o mercado.
@@ -30,7 +34,7 @@ export const Footer = () => {
 
           {/* COLUNA 2: CONTATO */}
           <div>
-            <h5 className="text-[10px] uppercase tracking-[0.3em] text-white/30 font-bold mb-8">Contato</h5>
+            <h5 className="text-[10px] uppercase tracking-[0.3em] text-yellow-400 font-bold mb-8">Contato</h5>
             <div className="flex flex-col gap-4 text-[11px] md:text-sm">
               <div>
                 <span className="block text-[9px] text-white/20 uppercase mb-1">E-mail</span>
@@ -46,7 +50,7 @@ export const Footer = () => {
 
           {/* COLUNA 3: LINKS RÁPIDOS */}
           <div>
-            <h5 className="text-[10px] uppercase tracking-[0.3em] text-white/30 font-bold mb-8">Links Rápidos</h5>
+            <h5 className="text-[10px] uppercase tracking-[0.3em] text-yellow-400 font-bold mb-8">Links Rápidos</h5>
             <ul className="flex flex-col gap-4 text-xs md:text-sm text-white/40 uppercase tracking-widest font-medium">
               <li><a href="#" className="hover:text-white transition-colors">Início</a></li>
               <li><a href="#" className="hover:text-white transition-colors">Sobre Nós</a></li>
@@ -57,7 +61,7 @@ export const Footer = () => {
 
           {/* COLUNA 4: SOLUÇÕES */}
           <div>
-            <h5 className="text-[10px] uppercase tracking-[0.3em] text-white/30 font-bold mb-8">Nossas Soluções</h5>
+            <h5 className="text-[10px] uppercase tracking-[0.3em] text-yellow-400 font-bold mb-8">Nossas Soluções</h5>
             <ul className="flex flex-col gap-4 text-xs text-white/40 leading-tight">
               <li>Social Media & Tráfego Pago</li>
               <li>Filmmaker & Storymaker</li>
@@ -68,7 +72,7 @@ export const Footer = () => {
 
           {/* COLUNA 5: REDES SOCIAIS (Estilo Foto 10) */}
           <div className="flex flex-col items-start lg:items-end">
-             <h5 className="text-[10px] uppercase tracking-[0.3em] text-white/30 font-bold mb-8 lg:text-right w-full">Siga-nos</h5>
+             <h5 className="text-[10px] uppercase tracking-[0.3em] text-yellow-400 font-bold mb-8 lg:text-right w-full">Siga-nos</h5>
              <div className="flex gap-3">
                 {[
                   { icon: Instagram, href: "#" },

@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useMagneticHover } from '../hooks/useMagneticHover';
 // @ts-ignore
 import samaraImg from '../assets/img/samara.webp';
 
@@ -7,10 +8,14 @@ const CONTACT_PHONE = "5511958247301";
 const WHATSAPP_URL = `https://wa.me/${CONTACT_PHONE}?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20a%20presença%20digital.`;
 
 export const Hero = () => {
+  // Refs para efeito magnético
+  const btnPrimaryRef = useMagneticHover();
+  const btnSecondaryRef = useMagneticHover();
+
   // Variáveis de Estilo para Botões
-  const btnBase = "font-bold text-[10px] md:text-[11px] uppercase tracking-[0.2em] transition-all text-center";
-  const btnPrimary = `${btnBase} bg-black text-white px-8 md:px-10 py-4 md:py-5 rounded-lg hover:bg-zinc-800 w-full md:w-auto`;
-  const btnSecondary = `${btnBase} text-black/60 hover:text-black w-full md:w-auto`;
+  const btnBase = "font-bold text-[10px] md:text-[11px] uppercase tracking-[0.2em] transition-all text-center btn-magnetic";
+  const btnPrimary = `${btnBase} bg-black text-white px-8 md:px-10 py-4 md:py-5 rounded-lg btn-fill-effect w-full md:w-auto`;
+  const btnSecondary = `${btnBase} text-black/60 hover:text-black w-full md:w-auto border-b-2 border-black/20 hover:border-yellow-500 transition-colors`;
 
   return (
     <section id="inicio" className="relative min-h-screen lg:min-h-[90vh] flex items-center overflow-hidden bg-[#f3f3f3] pt-24 lg:pt-0">
@@ -24,7 +29,7 @@ export const Hero = () => {
               animate={{ opacity: 1, x: 0 }}
               className="mb-6 md:mb-8"
             >
-              <span className="text-[9px] md:text-[10px] tracking-[0.4em] font-bold uppercase text-black/30">
+              <span className="text-[9px] md:text-[10px] tracking-[0.4em] font-bold uppercase text-yellow-500">
                 SUA PRESENÇA DIGITAL COMPLETA
               </span>
             </motion.div>
@@ -47,10 +52,22 @@ export const Hero = () => {
             transition={{ delay: 0.3 }}
             className="flex flex-col md:flex-row items-center justify-center lg:justify-start gap-6 mb-16 lg:mb-24"
           >
-            <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className={btnPrimary}>
+            <a 
+              ref={btnPrimaryRef} 
+              href={WHATSAPP_URL} 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className={btnPrimary}
+            >
               Começar Agora
             </a>
-            <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className={btnSecondary}>
+            <a 
+              ref={btnSecondaryRef} 
+              href={WHATSAPP_URL} 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className={btnSecondary}
+            >
               Fale Conosco
             </a>
           </motion.div>
@@ -60,7 +77,7 @@ export const Hero = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.6 }}
-            className="hidden sm:flex items-center justify-center lg:justify-start gap-8 md:gap-12 border-t border-black/5 pt-10"
+            className="hidden sm:flex items-center justify-center lg:justify-start gap-8 md:gap-12 border-t border-yellow-500/20 pt-10"
           >
             <div className="flex items-center gap-3">
               <div className="flex -space-x-3">
@@ -73,13 +90,13 @@ export const Hero = () => {
                   />
                 ))}
               </div>
-              <p className="text-[10px] font-bold uppercase leading-tight text-black/30 tracking-tighter">
+              <p className="text-[10px] font-bold uppercase leading-tight text-yellow-500 tracking-tighter">
                 Trusted by<br/>Clients
               </p>
             </div>
 
-            <p className="text-[12px] md:text-[13px] text-black/50 leading-relaxed max-w-[300px] font-medium italic">
-              "Cuidamos de tudo: social media, vídeos, design e anúncios."
+              <p className="text-[12px] md:text-[13px] text-black/40 leading-relaxed max-w-[300px] font-medium italic">
+              "Cuidamos de tudo: <span className="text-yellow-600">social media</span>, vídeos, design e anúncios."
             </p>
           </motion.footer>
         </div>
