@@ -27,7 +27,7 @@ export const Navbar = () => {
             alt="SM Company Logo" 
             className="w-8 h-8 object-contain"
           />
-          <span className="font-bold tracking-tighter uppercase text-lg">SM COMPANY</span>
+          <span className="font-bold tracking-tighter uppercase text-lg text-black">SM COMPANY</span>
         </div>
 
         {/* DESKTOP MENU */}
