@@ -7,7 +7,7 @@ import logoImg from '../assets/img/logo-sm.webp';
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const btnOrcamentoRef = useMagneticHover();
+  const btnOrcamentoRef = useMagneticHover<HTMLAnchorElement>();
 
   const menuItems = [
     { name: 'Início', href: '#inicio' },

@@ -14,9 +14,9 @@ interface MagneticState {
   animationFrameId: number;
 }
 
-export const useMagneticHover = (config: MagneticConfig = {}) => {
+export const useMagneticHover = <T extends HTMLElement = HTMLElement>(config: MagneticConfig = {}) => {
   const { radius = 50, strength = 0.3, ease = 0.2 } = config;
-  const ref = useRef<HTMLElement>(null);
+  const ref = useRef<T | null>(null);
   const state = useRef<MagneticState>({
     x: 0,
     y: 0,

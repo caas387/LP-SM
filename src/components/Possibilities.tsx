@@ -1,21 +1,22 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion, type Variants } from 'framer-motion';
+import nextLevelImg from '../assets/img/img3.jpeg';
 
-const StrategicBlueprint = () => {
-  const draw = {
+const StrategicBlueprint = ({ compact = false }: { compact?: boolean }) => {
+  const draw: Variants = {
     hidden: { pathLength: 0, opacity: 0 },
     visible: (i: number) => ({
       pathLength: 1,
       opacity: 0.5,
       transition: {
-        pathLength: { delay: i * 0.2, type: "spring", duration: 1.5, bounce: 0 },
+        pathLength: { delay: i * 0.2, type: "spring" as const, duration: 1.5, bounce: 0 },
         opacity: { delay: i * 0.2, duration: 0.2 }
       }
     })
   };
 
   return (
-    <div className="relative w-full h-[380px] md:h-[480px] bg-[#050505] rounded-[30px] md:rounded-[40px] border border-white/5 overflow-hidden flex items-center justify-center shadow-2xl">
+    <div className={`relative w-full ${compact ? 'h-[280px] md:h-[340px]' : 'h-[380px] md:h-[480px]'} bg-[#050505] rounded-[30px] md:rounded-[40px] border border-white/5 overflow-hidden flex items-center justify-center shadow-2xl`}>
       {/* Grid de Fundo Milimetrado */}
       <div 
         className="absolute inset-0 opacity-[0.03]" 
@@ -76,7 +77,7 @@ const StrategicBlueprint = () => {
 
       {/* Scanner Line */}
       <motion.div 
-        animate={{ y: [0, 480, 0] }}
+        animate={{ y: [0, compact ? 340 : 480, 0] }}
         transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
         className="absolute inset-x-0 h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent z-20"
       />
@@ -86,7 +87,7 @@ const StrategicBlueprint = () => {
 
 export const Possibilities = () => {
   return (
-    <section className="bg-black text-white py-20 md:py-32 px-6 md:px-12 overflow-hidden">
+    <section id="possibilidades" className="bg-black text-white py-20 md:py-32 px-6 md:px-12 overflow-hidden">
       <div className="max-w-[1440px] mx-auto">
         
         <motion.h2 
@@ -98,7 +99,7 @@ export const Possibilities = () => {
           <span className="font-light italic opacity-70 text-3xl md:text-7xl lg:text-[90px]">PRÓXIMO NÍVEL?</span>
         </motion.h2>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
           
           {/* TAGLINE LATERAL (Oculta no Mobile para foco no Blueprint) */}
           <div className="hidden lg:flex lg:col-span-2 flex-col gap-8 text-[10px] uppercase tracking-[0.4em] text-white/20 font-bold">
@@ -107,17 +108,38 @@ export const Possibilities = () => {
             <span className="pl-5">RESULTADO</span>
           </div>
 
-          {/* BLUEPRINT ANIMADO */}
-          <motion.div 
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            className="lg:col-span-6 w-full"
+          <motion.figure
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            className="relative lg:col-span-5 w-full max-w-[520px] mx-auto"
           >
-            <StrategicBlueprint />
-          </motion.div>
+            <div className="absolute -left-4 top-12 h-36 w-px bg-yellow-400/60 hidden sm:block" />
+            <div className="absolute -right-5 bottom-14 h-28 w-28 border-r border-b border-yellow-400/35 hidden lg:block" />
+
+            <div className="relative overflow-hidden rounded-t-[42px] md:rounded-t-[56px] border border-white/10 bg-[#101010] shadow-2xl shadow-black">
+              <img
+                src={nextLevelImg}
+                alt="Samara representando o próximo nível da marca"
+                className="h-[520px] md:h-[660px] w-full object-cover object-[50%_14%]"
+                loading="lazy"
+              />
+
+              <div className="absolute inset-x-0 bottom-0 h-2/5 bg-gradient-to-t from-black/85 via-black/25 to-transparent" />
+
+              <figcaption className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
+                <p className="text-[9px] md:text-[10px] font-bold uppercase tracking-[0.4em] text-yellow-300/80 mb-2">
+                  Próximo nível
+                </p>
+                <p className="text-2xl md:text-4xl font-semibold uppercase leading-[0.95] max-w-xs">
+                  Presença com autoridade
+                </p>
+              </figcaption>
+            </div>
+          </motion.figure>
 
           {/* TEXTOS DE APOIO */}
-          <div className="lg:col-span-4 flex flex-col items-start lg:pl-10 text-center lg:text-left">
+          <div className="lg:col-span-5 flex flex-col items-start lg:pl-4 text-center lg:text-left">
             <h3 className="text-xl md:text-2xl font-semibold mb-6 uppercase border-b border-white/10 pb-4 w-full">
               Engenharia de <span className="italic font-light">Crescimento</span>
             </h3>
@@ -134,6 +156,10 @@ export const Possibilities = () => {
               QUERO MINHA ESTRATÉGIA AGORA
               <span className="w-2 h-2 bg-white rounded-full animate-pulse" />
             </motion.a>
+
+            <div className="w-full">
+              <StrategicBlueprint compact />
+            </div>
           </div>
         </div>
       </div>
